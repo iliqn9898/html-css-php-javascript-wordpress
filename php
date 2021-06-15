@@ -140,24 +140,94 @@ echo str_replace('php','java',$a);
 
 ?>
 
+-------------------------------------------------------------------
+Пример за многомерен масив с 3 елемента(клиента) вътре 
 
+<?php
+$arr1=[
+   ['username'=>'user1', 'age'=>18, 'email'=>'user@abv.com'],
+   ['username'=>'user2', 'age'=>30, 'email'=>'user2@abv.com'],
+   ['username'=>'user3', 'age'=>45, 'email'=>'user3@abv.com']
 
+];
+?>
 
+----------------------------------------------------------------------
+Cicles / Цикли в PHP
 
+-for
+<?php
+for($i=0;$i<10;$i++){
+    echo $i.'<br>';
+}
+?> 
 
+-while
+<?php
 
+$i=0;
+while($i<10){
 
+    echo $i.'<br>';
+    $i ++;
+}
+?>
 
+-do/while
+<?php
 
+$i=0;
+do{
+echo $i ;
+$i ++;
 
+}while($i<10);
 
+?>
 
+---------------------------------------------
+Итериране на обикновен масив с for цикъла
+<?php
+// we have array ($users)
+ $users=['ivan','petko','koko','gogo','maria','misho'];
+    for($i=0;count($users);$i++){
+    echo $users[$i].'<br>';
+    }
+?>
 
+Итериране на обикновен масив с foreach цикъла
 
+<?php
 
+$users = ['ivan', 'petko', 'koko', 'gogo', 'maria', 'misho'];
+    foreach ($users as $v) {
+        echo $v . '<br>';
+    }
+?>
 
+Интериране на асоциативен масив с foreach цикъла
 
+<?php
 
+$users = ['ivan', 'petko', 'koko', 'gogo', 'maria', 'misho'];
+    foreach ($users as $k=>$v) {
+        echo 'Key: '.$k.' is : '.$v . '<br>';
+    }
+?>
+
+------------------------------------------------------------------------------------------------------------------
+Функции в PHP 
+How to create function
+
+function circleArea(){
+    $r=3 ;
+    echo pi()*pow($r,2);
+
+   }
+   
+Как да извикаме функция 
+//just mention function's name
+ciecleArea();
 
 
 

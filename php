@@ -230,10 +230,44 @@ function circleArea(){
 ciecleArea();
 
 
+-------------------------------------------------------------------------------
+Date / Time 
+https://www.php.net/manual/en/function.date   -  date documentation
+// date ( string $format , int|null $timestamp = null ) : string
+<?php
+// only $format
+echo date('Y-m-d H:i:s')    ---> we've got curent date and time 
 
+?>
+// with both  parameter
+<?php
+// с time показва настоящото време , като с мего можем да правим аритметични операции да прибавяме часове да махаме [(-3600) 1 час]
+echo date('Y-m-d H:i:s',time());
 
+?>
 
+Текстова презентация на дата 
+//прехвърламе информацията в date create formar слагаме я в порменлива ($result) и може да правим каквото искаме с нея има разл. функции според целите.
+<?php
+$date='2017-03-04 13:12:51';
+$result=date_create_from_format('Y-m-d H:i:s', $data);
+echo $result;
+?>
 
+- function strtotime - използва се само при сигурни данни 
+
+<?php
+$date='2017-03-04 13:12:51';
+echo strtotime($date);
+?>
+------------------------------------------------------
+Сесии 
+как да сброим колко пъти потребител(браузър) е влезнал в сайта ни
+<?php
+
+session_start();
+$_SESSION['count']+=1;
+echo $_SESSION['count'];
 
 
 

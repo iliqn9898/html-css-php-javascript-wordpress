@@ -215,6 +215,13 @@ $users = ['ivan', 'petko', 'koko', 'gogo', 'maria', 'misho'];
     }
 ?>
 
+
+
+
+
+
+
+
 ------------------------------------------------------------------------------------------------------------------
 Функции в PHP 
 How to create function
@@ -246,6 +253,17 @@ echo date('Y-m-d H:i:s',time());
 
 ?>
 
+<?php
+//output the weekday of today (monday, tuesday etc.) /  Да се покаже днешния ден .
+
+ echo date('l');
+
+?>
+
+
+
+
+
 Текстова презентация на дата 
 //прехвърламе информацията в date create formar слагаме я в порменлива ($result) и може да правим каквото искаме с нея има разл. функции според целите.
 <?php
@@ -269,9 +287,120 @@ session_start();
 $_SESSION['count']+=1;
 echo $_SESSION['count'];
 
+------------------------------------------------------------------------
+Масиви / Arrays
+<?php
+//добавяне на нов елемент в обикновен масив 
+
+$cars2=['car1','car2','car3'];
+$cars2[]='car4';
+?>
+
+<?php
+// Добавяне на нов eлeмeнт в асоциативен масив
+
+$cars = ['BMW' => 'car1','Toyota' => 'car2','Reno' => 'car3'];
+$cars['Haval']='car4';
+
+?>
+
+
+<?php
+//Имаме масив, искаме всички стойности да ги вкараме в новия масив $new_array с foreach loop
+
+ $cars = ['BMW' => 'car1','Toyota' => 'car2','Reno' => 'car3'];
+
+ $new_array = [];
+
+ foreach($cars as $k=>$v) {
+    $new_array[] = $v;
 
 
 
+
+//How to know the lenght of an array with function  count()
+
+<?php
+
+$cars=["Volvo","Mecedes","BMW","Toyota"];
+echo count($cars);
+
+?>
+
+// Как да изкараме стойност от асоциативен масив / когато искаме да кажем, че Бен е на 37 год. $age['Ben']
+<?php
+
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+    echo "Ben is " . $age['Ben']. " years old.";                   -------> Ben is 37 years old.
+
+-------------
+// Сортиране на масиви - по азбучен ред 
+<?php
+
+ $colors = array("red", "green", "blue", "yellow"); 
+    sort($colors);
+
+?>
+
+// Сортиране на масиви - в низходящ ред / наобратно от горното / array descending alphabetically
+
+<?php
+
+$colors = array("red", "green", "blue", "yellow"); 
+    rsort($colors);
+
+?>
+
+-----------------------------------
+
+PHP Forms
+//how can you, in welcome.php, output the value from the "first name" field / как да извадим стойноста на полето First name
+
+<form action="welcome.php" method="get">
+First name: <input type="text" name="fname">
+</form>
+
+
+<html>
+<body>
+
+Welcome <?php echo $_GET["fname"]; ?>
+
+</body>
+</html>
+
+----------------------------------------------------
+How to include 
+
+correct syntax to include a file named "footer.php".
+
+
+<?php include 'footer.php';
+?>
+
+
+//write the correct syntax to open and read the file content with function readfile();
+
+<?php
+echo readfile("webdictionary.txt");
+?>
+
+//Open a file, and write the correct syntax to output one character at the time, until end-of-file.
+
+
+$myfile = fopen("webdict.txt", "r");
+
+while(!feof($myfile)) {
+  echo fgetc($myfile);
+}
+
+------------------------------------------------------
+Cookies. 
+
+//Create a cookie named "username".
+
+
+setcookie("username", "John", time() + (86400 * 30), "/");
 
 
 
